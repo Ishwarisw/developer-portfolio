@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Portfolio Dashboard</title>
+  <meta name="description" content="Personal developer portfolio showcasing projects, skills, and AI engineering work.">
+  
+  <!-- Google Fonts: Inter & JetBrains Mono for modern developer aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Layout Wrapper: Sidebar + Main Content -->
+  <div class="dashboard-container">
+
+    <!-- ============================================================== -->
+    <!-- A. SIDEBAR NAVIGATION                                           -->
+    <!-- ============================================================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-icon">&lt;/&gt;</span>
+          <span class="logo-text">DevPortfolio</span>
+        </div>
+        <!-- Close button for mobile drawer -->
+        <button class="mobile-close-btn" id="sidebarCloseBtn" aria-label="Close navigation menu">&times;</button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#hero" class="nav-link active">
+              <span class="nav-icon">⌂</span>
+              <span class="nav-label">Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">
+              <span class="nav-icon">👤</span>
+              <span class="nav-label">About</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#skills" class="nav-link">
+              <span class="nav-icon">⚡</span>
+              <span class="nav-label">Skills</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">
+              <span class="nav-icon">📁</span>
+              <span class="nav-label">Projects</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">
+              <span class="nav-icon">✉</span>
+              <span class="nav-label">Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="status-indicator">
+          <span class="status-dot"></span>
+          <span class="status-text">Available for Opportunities</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Overlay backdrop for mobile menu -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- ============================================================== -->
+    <!-- MAIN CONTENT AREA                                              -->
+    <!-- ============================================================== -->
+    <div class="main-wrapper">
+
+      <!-- ============================================================ -->
+      <!-- B. MAIN HEADER                                               -->
+      <!-- ============================================================ -->
+      <header class="main-header">
+        <div class="header-left">
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <div class="header-welcome">
+            <span class="badge">Welcome to my space</span>
+            <h1 class="header-title">Developer Portfolio Dashboard</h1>
+          </div>
+        </div>
+
+        <div class="header-profile">
+          <div class="profile-meta">
+            <span class="profile-name">Developer Name</span>
+            <span class="profile-role">Aspiring AI / GenAI Developer</span>
+          </div>
+          <div class="profile-avatar" aria-hidden="true">
+            <!-- Initials placeholder avatar -->
+            <span>DEV</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Scrollable Main View -->
+      <main class="content-area">
+
+        <!-- ========================================================== -->
+        <!-- C. HERO SECTION                                            -->
+        <!-- ========================================================== -->
+        <section class="section hero-section" id="hero">
+          <div class="hero-content">
+            <div class="hero-tag">
+              <span class="sparkle">✦</span>
+              <span>Hello, I am an aspiring software and AI builder</span>
+            </div>
+            <h2 class="hero-headline">Building ideas with code and AI.</h2>
+            <p class="hero-description">
+              Passionate about turning concepts into clean, functional web experiences 
+              and exploring the frontiers of Generative AI, machine learning models, and automated developer tooling.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                <span>View Projects</span>
+                <span class="btn-arrow">→</span>
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <span>Contact Me</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================== -->
+        <!-- ABOUT SECTION                                              -->
+        <!-- ========================================================== -->
+        <section class="section about-section" id="about">
+          <div class="section-header">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">A brief look into my background, interests, and engineering mindset.</p>
+          </div>
+          <div class="about-card">
+            <p>
+              I am an aspiring developer focused on combining strong computer science foundations with modern 
+              Generative AI systems. I enjoy crafting intuitive user interfaces, designing clean code structures, 
+              and continuously learning new frameworks and development workflows.
+            </p>
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <span class="highlight-title">Focus</span>
+                <span class="highlight-value">Generative AI &amp; Full-Stack Web</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-title">Status</span>
+                <span class="highlight-value">Day 1 of 3-Day Sprint</span>
+              </div>
+              <div class="highlight-item">
+                <span class="highlight-title">Philosophy</span>
+                <span class="highlight-value">Clean Code &amp; Continuous Learning</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================== -->
+        <!-- D. SKILLS SECTION                                          -->
+        <!-- ========================================================== -->
+        <section class="section skills-section" id="skills">
+          <div class="section-header">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">Core technologies and tools I work with and continuously practice.</p>
+          </div>
+
+          <div class="skills-grid">
+            <!-- Skill 1: Python -->
+            <div class="skill-card">
+              <div class="skill-icon python-icon">🐍</div>
+              <div class="skill-info">
+                <h3 class="skill-name">Python</h3>
+                <span class="skill-category">Backend &amp; AI Scripting</span>
+                <p class="skill-desc">Data processing, automation scripts, and foundational machine learning experiments.</p>
+              </div>
+            </div>
+
+            <!-- Skill 2: HTML -->
+            <div class="skill-card">
+              <div class="skill-icon html-icon">🌐</div>
+              <div class="skill-info">
+                <h3 class="skill-name">HTML</h3>
+                <span class="skill-category">Markup &amp; Semantics</span>
+                <p class="skill-desc">Accessible, SEO-friendly, and semantic web document architecture.</p>
+              </div>
+            </div>
+
+            <!-- Skill 3: CSS -->
+            <div class="skill-card">
+              <div class="skill-icon css-icon">🎨</div>
+              <div class="skill-info">
+                <h3 class="skill-name">CSS</h3>
+                <span class="skill-category">Styling &amp; Layouts</span>
+                <p class="skill-desc">Responsive designs with Flexbox, CSS Grid, custom properties, and modern themes.</p>
+              </div>
+            </div>
+
+            <!-- Skill 4: JavaScript -->
+            <div class="skill-card">
+              <div class="skill-icon js-icon">⚡</div>
+              <div class="skill-info">
+                <h3 class="skill-name">JavaScript</h3>
+                <span class="skill-category">Frontend Interactivity</span>
+                <p class="skill-desc">Vanilla DOM manipulation, asynchronous programming, and interactive client logic.</p>
+              </div>
+            </div>
+
+            <!-- Skill 5: Git and GitHub -->
+            <div class="skill-card">
+              <div class="skill-icon git-icon">🐙</div>
+              <div class="skill-info">
+                <h3 class="skill-name">Git and GitHub</h3>
+                <span class="skill-category">Version Control &amp; Collaboration</span>
+                <p class="skill-desc">Branching, staging, atomic commits, repository hosting, and collaborative workflows.</p>
+              </div>
+            </div>
+
+            <!-- Skill 6: Generative AI -->
+            <div class="skill-card">
+              <div class="skill-icon ai-icon">✨</div>
+              <div class="skill-info">
+                <h3 class="skill-name">Generative AI</h3>
+                <span class="skill-category">Prompt Engineering &amp; LLMs</span>
+                <p class="skill-desc">Exploring LLM integrations, prompt tuning, API connections, and generative pipelines.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================================== -->
+        <!-- E. PROJECTS SECTION                                        -->
+        <!-- ========================================================== -->
+        <section class="section projects-section" id="projects">
+          <div class="section-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Selected placeholder projects highlighting problem solving and technology stack.</p>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1 -->
+            <article class="project-card">
+              <div class="project-header">
+                <div class="project-badge">Concept Project 1</div>
+                <h3 class="project-title">AI Prompt Studio</h3>
+              </div>
+              <p class="project-description">
+                A playground application for creating, versioning, and comparing prompt templates 
+                against modern large language models with token usage estimators.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Generative AI</span>
+                <span class="tag">API</span>
+              </div>
+              <div class="project-footer">
+                <a href="#contact" class="btn btn-outline">View Project</a>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card">
+              <div class="project-header">
+                <div class="project-badge">Concept Project 2</div>
+                <h3 class="project-title">Developer Workflow Manager</h3>
+              </div>
+              <p class="project-description">
+                A minimalist productivity dashboard tracking daily dev tasks, coding sessions, 
+                and GitHub commit streaks with dark-mode first design principles.
+              </p>
+              <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+              </div>
+              <div class="project-footer">
+                <a href="#contact" class="btn btn-outline">View Project</a>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card">
+              <div class="project-header">
+                <div class="project-badge">Concept Project 3</div>
+                <h3 class="project-title">Smart Code Search Engine</h3>
+              </div>
+              <p class="project-description">
+                A semantic documentation search prototype that parses codebases and returns 
+                syntactically relevant code snippets and docstring summaries.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Git</span>
+                <span class="tag">Algorithms</span>
+              </div>
+              <div class="project-footer">
+                <a href="#contact" class="btn btn-outline">View Project</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ========================================================== -->
+        <!-- F. CONTACT SECTION                                         -->
+        <!-- ========================================================== -->
+        <section class="section contact-section" id="contact">
+          <div class="section-header">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Interested in collaborating or discussing AI projects? Let's connect.</p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-info">
+              <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <div class="contact-details">
+                  <span class="contact-label">Email Address</span>
+                  <span class="contact-value">developer@example.com</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-icon">🐙</span>
+                <div class="contact-details">
+                  <span class="contact-label">GitHub Profile</span>
+                  <span class="contact-value">github.com/developer-placeholder</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-icon">💼</span>
+                <div class="contact-details">
+                  <span class="contact-label">LinkedIn Profile</span>
+                  <span class="contact-value">linkedin.com/in/developer-placeholder</span>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-icon">📍</span>
+                <div class="contact-details">
+                  <span class="contact-label">Location</span>
+                  <span class="contact-value">City, Country (Remote Friendly)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-action-box">
+              <h3>Let's build something remarkable.</h3>
+              <p>Feel free to reach out for software engineering roles, hackathon collaborations, or open-source projects.</p>
+              <a href="mailto:developer@example.com" class="btn btn-primary">Send an Email</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Page Footer -->
+        <footer class="main-footer">
+          <p>© 2026 Developer Portfolio • Day 1 Sprint Complete • Built with HTML5, CSS3, &amp; Vanilla JS</p>
+        </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
