@@ -1,10 +1,12 @@
 /**
  * ==========================================================================
- * DEVELOPER PORTFOLIO DASHBOARD - SCRIPT.JS (DAY 1)
+ * DEVELOPER PORTFOLIO DASHBOARD - SCRIPT.JS
+ * Developer: Ishwari Walewadikar
  * Purpose:
  * 1. Mobile sidebar drawer toggling (open/close).
  * 2. Active section link highlighting during scroll.
- * 3. Smooth, accessible navigation handling.
+ * 3. Keyboard accessibility (Escape key closes drawer).
+ * 4. Smooth, error-free navigation handling.
  * ==========================================================================
  */
 
@@ -31,6 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
       sidebar.classList.add('open');
       sidebarBackdrop.classList.add('active');
       document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      if (mobileMenuBtn) {
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+      }
     }
   }
 
@@ -42,6 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
       sidebar.classList.remove('open');
       sidebarBackdrop.classList.remove('active');
       document.body.style.overflow = ''; // Restore background scrolling
+      if (mobileMenuBtn) {
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      }
     }
   }
 
@@ -57,6 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (sidebarBackdrop) {
     sidebarBackdrop.addEventListener('click', closeMobileMenu);
   }
+
+  // Close mobile drawer when pressing the Escape key
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && sidebar && sidebar.classList.contains('open')) {
+      closeMobileMenu();
+    }
+  });
 
   // ------------------------------------------------------------------------
   // 3. Close mobile drawer when any navigation link is clicked
@@ -74,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4. Highlight Active Navigation Link on Scroll
   // ------------------------------------------------------------------------
   function updateActiveNavLink() {
-    const scrollPosition = window.scrollY + 140; // Offset for header
+    const scrollPosition = window.scrollY + 140; // Offset for sticky header
 
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
@@ -95,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Update active link on scroll with throttling
+  // Update active link on scroll using requestAnimationFrame for performance
   let isScrolling = false;
   window.addEventListener('scroll', () => {
     if (!isScrolling) {
@@ -107,6 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Initial check on page load
+  // Initial check on page load to set active nav link
   updateActiveNavLink();
 });

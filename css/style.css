@@ -1,12 +1,13 @@
 /* ==========================================================================
    DEVELOPER PORTFOLIO DASHBOARD - STYLE.CSS
    Theme: Modern Dark Developer Theme
+   Developer: Ishwari Walewadikar
    Accents: Violet (#8b5cf6) & Purple (#a855f7)
-   Surface: Charcoal / Near Black (#090b10, #0f131f, #151a29)
+   Surface: Charcoal / Near Black (#090b10, #0f131f, #141826)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. CSS Custom Properties (Theme Design System)
+   1. CSS Custom Properties (Design System)
    -------------------------------------------------------------------------- */
 :root {
   --bg-base: #090b10;
@@ -24,6 +25,9 @@
   --accent-secondary: #a855f7;
   --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
   --accent-glow: rgba(139, 92, 246, 0.25);
+
+  --status-success: #10b981;
+  --status-progress: #c084fc;
 
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
@@ -341,7 +345,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   6. Content Area & Sections
+   6. Content Area & Section Common Styles
    -------------------------------------------------------------------------- */
 .content-area {
   padding: 40px 36px 60px;
@@ -427,7 +431,7 @@ button {
 }
 
 .hero-description {
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   color: var(--text-muted);
   max-width: 680px;
   margin-bottom: 32px;
@@ -489,19 +493,25 @@ button {
 }
 
 .btn-outline {
-  background: transparent;
-  color: var(--accent-primary);
+  background: rgba(139, 92, 246, 0.06);
+  color: #c084fc;
   border: 1px solid rgba(139, 92, 246, 0.4);
-  padding: 8px 18px;
+  padding: 10px 18px;
   font-size: 0.88rem;
   border-radius: var(--radius-sm);
   width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all var(--transition-fast);
 }
 
 .btn-outline:hover {
-  background: rgba(139, 92, 246, 0.15);
+  background: rgba(139, 92, 246, 0.18);
   border-color: var(--accent-primary);
-  color: #fff;
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 /* --------------------------------------------------------------------------
@@ -511,20 +521,28 @@ button {
   background-color: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: 34px;
   box-shadow: var(--shadow-card);
 }
 
-.about-card > p {
+.about-bio {
   color: var(--text-muted);
-  font-size: 1.05rem;
+  font-size: 1.04rem;
   line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.about-bio:last-of-type {
   margin-bottom: 28px;
+}
+
+.about-bio strong {
+  color: var(--text-main);
 }
 
 .about-highlights {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
 }
 
@@ -553,11 +571,11 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   10. Skills Section Grid
+   10. Skills Section Grid (7 Distinct Skills)
    -------------------------------------------------------------------------- */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
 }
 
@@ -581,7 +599,7 @@ button {
 }
 
 .skill-icon {
-  font-size: 1.8rem;
+  font-size: 1.75rem;
   line-height: 1;
   padding: 12px;
   background: rgba(255, 255, 255, 0.04);
@@ -622,7 +640,7 @@ button {
    -------------------------------------------------------------------------- */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
   gap: 24px;
 }
 
@@ -648,17 +666,32 @@ button {
   margin-bottom: 14px;
 }
 
-.project-badge {
+.project-badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.badge-status {
   display: inline-block;
   font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.7px;
-  color: var(--accent-primary);
-  background: rgba(139, 92, 246, 0.12);
   padding: 3px 10px;
   border-radius: var(--radius-full);
-  margin-bottom: 10px;
+}
+
+.badge-completed {
+  color: var(--status-success);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-progress {
+  color: var(--status-progress);
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .project-title {
@@ -695,6 +728,28 @@ button {
 
 .project-footer {
   margin-top: auto;
+}
+
+.project-status-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  width: 100%;
+}
+
+.status-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-secondary);
+  box-shadow: 0 0 8px var(--accent-secondary);
+  flex-shrink: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -757,6 +812,18 @@ button {
   word-break: break-all;
 }
 
+.contact-link {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  transition: color var(--transition-fast);
+}
+
+.contact-link:hover {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+}
+
 .contact-action-box {
   background: radial-gradient(circle at top right, rgba(168, 85, 247, 0.12), transparent 70%),
               var(--bg-subtle);
@@ -792,7 +859,7 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   14. Mobile Backdrop & Responsiveness
+   14. Mobile Backdrop & Responsive Breakpoints
    -------------------------------------------------------------------------- */
 .sidebar-backdrop {
   display: none;
@@ -806,7 +873,7 @@ button {
   transition: opacity var(--transition-normal);
 }
 
-/* Responsive Breakpoints */
+/* Responsive Media Queries */
 @media (max-width: 992px) {
   .contact-card {
     grid-template-columns: 1fr;
@@ -887,5 +954,13 @@ button {
 
   .header-title {
     font-size: 1rem;
+  }
+
+  .about-card {
+    padding: 24px 18px;
+  }
+
+  .contact-card {
+    padding: 24px 18px;
   }
 }
